@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cadastro_Usuarios</name>
+    </assembly>
+    <members>
+        <member name="M:Cadastro_Usuarios.Repositores.UsuarioRepository.Cadastrar(Cadastro_Usuarios.ViewModels.usuarioViewModel)">
+            <summary>
+            Metodo responsavel por cadastrar um novo usuario
+            </summary>
+            <param name="Usuario_Novo">O novo usuario a ser cadastrado</param>
+        </member>
+        <member name="M:Cadastro_Usuarios.Repositores.UsuarioRepository.Delete(System.Guid)">
+            <summary>
+            Metodo responsavel por deletar um usuario existente
+            </summary>
+            <param name="id">Id do usuario cadastrado</param>
+        </member>
+        <member name="M:Cadastro_Usuarios.Repositores.UsuarioRepository.Editar(Cadastro_Usuarios.ViewModels.usuarioViewModel,System.Guid)">
+            <summary>
+            Metodo responsavel por editar um usuario existente
+            </summary>
+            <param name="Usuario_atualizado">Novas informações</param>
+            <param name="id">Id do usuario já cadastrado</param>
+            <returns></returns>
+        </member>
+        <member name="M:Cadastro_Usuarios.Repositores.UsuarioRepository.Listar_Todos">
+            <summary>
+            Metodo responsavel por listar os usuario cadastrados
+            </summary>
+            <returns>Uma lista de usuarios</returns>
+        </member>
+    </members>
+</doc>
