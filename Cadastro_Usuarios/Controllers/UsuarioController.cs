@@ -26,12 +26,11 @@ namespace Cadastro_Usuarios.Controllers
         {
             try
             {
-            _logger.LogInformation("Método de listagem realizado com sucesso");
-            return Ok(_context.Listar_Todos());
+                _logger.LogInformation("Método de listagem realizado com sucesso");
+                return Ok(_context.Listar_Todos());
             }
             catch (Exception ex)
             {
-
                 return BadRequest(ex);
             }
         }
@@ -41,10 +40,10 @@ namespace Cadastro_Usuarios.Controllers
         {
             try
             {
-            _context.Cadastrar(Usuario_Novo);
-            _logger.LogInformation("Usuario Cadastrado com sucesso");
+                _context.Cadastrar(Usuario_Novo);
+                _logger.LogInformation("Usuario Cadastrado com sucesso");
 
-            return StatusCode(201);
+                return StatusCode(201);
             }
             catch (Exception ex)
             {
@@ -58,9 +57,9 @@ namespace Cadastro_Usuarios.Controllers
         {
             try
             {
-            _context.Delete(id);
-            _logger.LogInformation("Método de deletar realizado com sucesso");
-            return StatusCode(204);
+                _context.Delete(id);
+                _logger.LogInformation("Método de deletar realizado com sucesso");
+                return StatusCode(204);
             }
             catch (Exception ex)
             {
@@ -74,16 +73,16 @@ namespace Cadastro_Usuarios.Controllers
         {
             try
             {
-            string retorno = _context.Editar(Usuario_atualizado, id);
+                string retorno = _context.Editar(Usuario_atualizado, id);
 
-            if (retorno == "Usuario não encontrado!")
-            {
-                _logger.LogInformation("Usuario não foi encontrado");
-                return BadRequest();
-            }
+                if (retorno == "Usuario não encontrado!")
+                {
+                    _logger.LogInformation("Usuario não foi encontrado");
+                    return BadRequest();
+                }
 
-            _logger.LogInformation("Informações alteradas");
-            return Ok(retorno);
+                _logger.LogInformation("Informações alteradas");
+                return Ok();
             }
             catch (Exception ex)
             {

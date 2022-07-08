@@ -27,9 +27,9 @@ namespace Cadastro_Usuarios.Repositores
 
             usuario.Id = new Guid();
             usuario.creationDate = DateTime.Now;
-            usuario.firstName = Usuario_Novo.firstName;
-            usuario.surName = Usuario_Novo.surName;
-            usuario.age = Usuario_Novo.age;
+            usuario.firstName = Usuario_Novo.FirstName;
+            usuario.surName = Usuario_Novo.SurName;
+            usuario.age = Usuario_Novo.Age;
             ctx.Usuarios.Add(usuario);
             ctx.SaveChanges();
         }
@@ -62,17 +62,17 @@ namespace Cadastro_Usuarios.Repositores
                 return "Usuario não encontrado!";
             }
 
-            if (Usuario_atualizado.surName != null)
+            if (Usuario_atualizado.SurName != null)
             {
-                usuarios.surName = Usuario_atualizado.surName;
+                usuarios.surName = Usuario_atualizado.SurName;
             }
-            if (Usuario_atualizado.firstName != null)
+            if (Usuario_atualizado.FirstName != null)
             {
-                usuarios.firstName = Usuario_atualizado.firstName;
+                usuarios.firstName = Usuario_atualizado.FirstName;
             }
-            if (Usuario_atualizado.age > 0)
+            if (Usuario_atualizado.Age > 0)
             {
-                usuarios.age = Usuario_atualizado.age;
+                usuarios.age = Usuario_atualizado.Age;
             }
 
             ctx.Usuarios.Update(usuarios);

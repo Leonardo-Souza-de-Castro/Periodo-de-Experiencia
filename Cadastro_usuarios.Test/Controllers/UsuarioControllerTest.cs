@@ -11,7 +11,7 @@ using Xunit;
 
 namespace Cadastro_usuarios.Test
 {
-    public class UnitTest1
+    public class UsuarioControllerTest
     {
         [Fact]
         public void Deve_Listar_os_Usuarios()
@@ -53,9 +53,9 @@ namespace Cadastro_usuarios.Test
         public void Deve_cadastrar_um_Usuario()
         {
             var user1 = new usuarioViewModel();
-            user1.firstName = "Leonardo";
-            user1.surName = "";
-            user1.age = 17;
+            user1.FirstName = "Leonardo";
+            user1.SurName = "";
+            user1.Age = 17;
 
             var fakerepository = new Mock<IUsuarioRepository>();
             fakerepository.Setup(x => x.Cadastrar(user1));
@@ -73,7 +73,7 @@ namespace Cadastro_usuarios.Test
         public void Deve_atualizar_um_Usuario()
         {
             var user1 = new usuarioViewModel();
-            user1.surName = "Souza";
+            user1.SurName = "Souza";
 
             var fakerepository = new Mock<IUsuarioRepository>();
             fakerepository.Setup(x => x.Editar(user1, Guid.Parse("02842C7B-5FC5-494D-4EAD-08DA5DCCC5FD")));

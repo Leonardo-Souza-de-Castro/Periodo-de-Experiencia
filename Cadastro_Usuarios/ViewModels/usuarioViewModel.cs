@@ -5,9 +5,9 @@ namespace Cadastro_Usuarios.ViewModels
     public class usuarioViewModel
     {
         [Required]
-        public string firstName { get; set; }
-        public string surName { get; set; }
+        public string FirstName { get; set; }
+        public string SurName { get; set; }
         [Required]
-        public int age { get; set; }
+        public int Age { get; set; }
     }
 }
