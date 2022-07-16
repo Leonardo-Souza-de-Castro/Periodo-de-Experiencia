@@ -7,11 +7,12 @@ namespace Cadastro_Usuarios.Interfaces
 {
     public interface IUsuarioRepository
     {
+        public Usuarios Buscar_Id(Guid id);
         public List<Usuarios> Listar_Todos();
 
-        public void Cadastrar(usuarioViewModel Usuario_Novo);
+        public void Cadastrar(UsuarioViewModel Usuario_Novo);
 
-        public string Editar(usuarioViewModel Usuario_atualizado, Guid id);
+        public string Editar(UsuarioViewModel Usuario_atualizado, Guid id);
 
         public void Delete(Guid id);
     }

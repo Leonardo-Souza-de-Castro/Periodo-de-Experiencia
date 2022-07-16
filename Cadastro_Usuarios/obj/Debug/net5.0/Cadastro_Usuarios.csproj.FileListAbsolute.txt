@@ -5,7 +5,6 @@ C:\Users\Guilherme\Desktop\Trabalhos do leo\Trabalho\Cadastro de Usuario\Cadastr
 C:\Users\Guilherme\Desktop\Trabalhos do leo\Trabalho\Cadastro de Usuario\Cadastro_Usuarios\bin\Debug\net5.0\Cadastro_Usuarios.runtimeconfig.json
 C:\Users\Guilherme\Desktop\Trabalhos do leo\Trabalho\Cadastro de Usuario\Cadastro_Usuarios\bin\Debug\net5.0\Cadastro_Usuarios.runtimeconfig.dev.json
 C:\Users\Guilherme\Desktop\Trabalhos do leo\Trabalho\Cadastro de Usuario\Cadastro_Usuarios\bin\Debug\net5.0\Cadastro_Usuarios.dll
-C:\Users\Guilherme\Desktop\Trabalhos do leo\Trabalho\Cadastro de Usuario\Cadastro_Usuarios\bin\Debug\net5.0\ref\Cadastro_Usuarios.dll
 C:\Users\Guilherme\Desktop\Trabalhos do leo\Trabalho\Cadastro de Usuario\Cadastro_Usuarios\bin\Debug\net5.0\Cadastro_Usuarios.pdb
 C:\Users\Guilherme\Desktop\Trabalhos do leo\Trabalho\Cadastro de Usuario\Cadastro_Usuarios\bin\Debug\net5.0\Humanizer.dll
 C:\Users\Guilherme\Desktop\Trabalhos do leo\Trabalho\Cadastro de Usuario\Cadastro_Usuarios\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
@@ -63,3 +62,4 @@ C:\Users\Guilherme\Desktop\Trabalhos do leo\Trabalho\Cadastro de Usuario\Cadastr
 C:\Users\Guilherme\Desktop\Trabalhos do leo\Trabalho\Cadastro de Usuario\Cadastro_Usuarios\obj\Debug\net5.0\Cadastro_Usuarios.genruntimeconfig.cache
 C:\Users\Guilherme\Desktop\Trabalhos do leo\Trabalho\Cadastro de Usuario\Cadastro_Usuarios\bin\Debug\net5.0\Cadastro_Usuarios.xml
 C:\Users\Guilherme\Desktop\Trabalhos do leo\Trabalho\Cadastro de Usuario\Cadastro_Usuarios\obj\Debug\net5.0\Cadastro_Usuarios.xml
+C:\Users\Guilherme\Desktop\Trabalhos do leo\Trabalho\Cadastro de Usuario\Cadastro_Usuarios\obj\Debug\net5.0\refint\Cadastro_Usuarios.dll

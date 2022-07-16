@@ -52,7 +52,7 @@ namespace Cadastro_usuarios.Test
         [Fact]
         public void Deve_cadastrar_um_Usuario()
         {
-            var user1 = new usuarioViewModel();
+            var user1 = new UsuarioViewModel();
             user1.FirstName = "Leonardo";
             user1.SurName = "";
             user1.Age = 17;
@@ -72,7 +72,7 @@ namespace Cadastro_usuarios.Test
         [Fact]
         public void Deve_atualizar_um_Usuario()
         {
-            var user1 = new usuarioViewModel();
+            var user1 = new UsuarioViewModel();
             user1.SurName = "Souza";
 
             var fakerepository = new Mock<IUsuarioRepository>();

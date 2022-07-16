@@ -17,11 +17,16 @@ namespace Cadastro_Usuarios.Repositores
             ctx = appContext;
         }
 
+        public Usuarios Buscar_Id(Guid id)
+        {
+            return ctx.Usuarios.FirstOrDefault(x => x.Id == id);
+        }
+
         /// <summary>
         /// Metodo responsavel por cadastrar um novo usuario
         /// </summary>
         /// <param name="Usuario_Novo">O novo usuario a ser cadastrado</param>
-        public void Cadastrar(usuarioViewModel Usuario_Novo)
+        public void Cadastrar(UsuarioViewModel Usuario_Novo)
         {
             Usuarios usuario = new Usuarios();
 
@@ -53,7 +58,7 @@ namespace Cadastro_Usuarios.Repositores
         /// <param name="Usuario_atualizado">Novas informações</param>
         /// <param name="id">Id do usuario já cadastrado</param>
         /// <returns></returns>
-        public string Editar(usuarioViewModel Usuario_atualizado, Guid id)
+        public string Editar(UsuarioViewModel Usuario_atualizado, Guid id)
         {
             Usuarios usuarios = ctx.Usuarios.FirstOrDefault(x => x.Id == id);
 

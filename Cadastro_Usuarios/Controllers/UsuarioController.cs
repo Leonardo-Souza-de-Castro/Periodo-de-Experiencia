@@ -35,8 +35,22 @@ namespace Cadastro_Usuarios.Controllers
             }
         }
 
+        [HttpGet("{id}")]
+        public IActionResult Buscar_Id(Guid id)
+        {
+            try
+            {
+                _logger.LogInformation("Usuario buscado com sucesso");
+                return Ok(_context.Buscar_Id(id));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+
         [HttpPost]
-        public IActionResult Cadastrar(usuarioViewModel Usuario_Novo)
+        public IActionResult Cadastrar(UsuarioViewModel Usuario_Novo)
         {
             try
             {
@@ -69,7 +83,7 @@ namespace Cadastro_Usuarios.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Editar(usuarioViewModel Usuario_atualizado, Guid id)
+        public IActionResult Editar(UsuarioViewModel Usuario_atualizado, Guid id)
         {
             try
             {

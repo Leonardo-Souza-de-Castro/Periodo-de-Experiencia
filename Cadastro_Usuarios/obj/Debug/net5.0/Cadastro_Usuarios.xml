@@ -4,7 +4,7 @@
         <name>Cadastro_Usuarios</name>
     </assembly>
     <members>
-        <member name="M:Cadastro_Usuarios.Repositores.UsuarioRepository.Cadastrar(Cadastro_Usuarios.ViewModels.usuarioViewModel)">
+        <member name="M:Cadastro_Usuarios.Repositores.UsuarioRepository.Cadastrar(Cadastro_Usuarios.ViewModels.UsuarioViewModel)">
             <summary>
             Metodo responsavel por cadastrar um novo usuario
             </summary>
@@ -16,7 +16,7 @@
             </summary>
             <param name="id">Id do usuario cadastrado</param>
         </member>
-        <member name="M:Cadastro_Usuarios.Repositores.UsuarioRepository.Editar(Cadastro_Usuarios.ViewModels.usuarioViewModel,System.Guid)">
+        <member name="M:Cadastro_Usuarios.Repositores.UsuarioRepository.Editar(Cadastro_Usuarios.ViewModels.UsuarioViewModel,System.Guid)">
             <summary>
             Metodo responsavel por editar um usuario existente
             </summary>

@@ -45,6 +45,17 @@ namespace Cadastro_Usuarios
                 c.IncludeXmlComments(xmlPath);
             });
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorPolicy",
+                                 builder =>
+                                 {
+                                     builder.WithOrigins("*")
+                                     .AllowAnyHeader()
+                                     .AllowAnyMethod();
+                                 });
+            });
+
             services.AddDbContext<UsuariosContext>(options => options.UseSqlServer(Configuration.GetConnectionString("CadastroContext")));
 
 
@@ -62,6 +73,8 @@ namespace Cadastro_Usuarios
             }
 
             app.UseRouting();
+
+            app.UseCors("CorPolicy");
 
             app.UseSwagger();
 

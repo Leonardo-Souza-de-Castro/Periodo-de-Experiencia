@@ -2,7 +2,7 @@
 
 namespace Cadastro_Usuarios.ViewModels
 {
-    public class usuarioViewModel
+    public class UsuarioViewModel
     {
         [Required]
         public string FirstName { get; set; }
