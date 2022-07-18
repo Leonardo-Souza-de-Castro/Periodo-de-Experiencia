@@ -8,11 +8,11 @@ namespace Cadastro_Usuarios.Domains
         [Key]
         public Guid Id { get; set; }
         [Required]
-        public string firstName { get; set; }
-        public string surName { get; set; }
+        public string FirstName { get; set; }
+        public string SurName { get; set; }
         [Required]
-        public int age { get; set; }
+        public int Age { get; set; }
         [Required]
-        public DateTime creationDate { get; set; }
+        public DateTime CreationDate { get; set; }
     }
 }

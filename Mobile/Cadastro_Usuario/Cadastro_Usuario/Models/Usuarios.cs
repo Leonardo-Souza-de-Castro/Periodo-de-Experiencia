@@ -7,9 +7,9 @@ namespace Cadastro_Usuario.Models
     internal class Usuarios
     {
         public Guid Id { get; set; }
-        public string firstName { get; set; }
-        public string surName { get; set; }
-        public int age { get; set; }
-        public DateTime creationDate { get; set; }
+        public string FirstName { get; set; }
+        public string SurName { get; set; }
+        public int Age { get; set; }
+        public DateTime CreationDate { get; set; }
     }
 }

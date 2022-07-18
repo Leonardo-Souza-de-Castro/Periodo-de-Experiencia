@@ -1,12 +1,7 @@
 ﻿using Cadastro_Usuario.Models;
 using Cadastro_Usuario.Services;
-using Cadastro_Usuario.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace Cadastro_Usuario
@@ -23,14 +18,16 @@ namespace Cadastro_Usuario
             AtualizaDados();
         }
 
-        private async void btCadastrar_Clicked(object sender, EventArgs e)
+        private async void Cadastrar_Clicked(object sender, EventArgs e)
         {
             try
             {
-                usuario = new Usuarios();
-                usuario.firstName = entFirstname.Text;
-                usuario.surName = entSurname.Text;
-                usuario.age = Convert.ToInt32(entAge.Text);
+                usuario = new Usuarios
+                {
+                    FirstName = entFirstname.Text,
+                    SurName = entSurname.Text,
+                    Age = int.Parse(entAge.Text)
+                };
                 if (btSalvar.Text == "Atualizar")
                 {
                     usuario.Id = Guid.Parse(entId.Text);
@@ -41,8 +38,8 @@ namespace Cadastro_Usuario
                 {
                     await api.CreateUser(usuario);
                 }
-                this.LimparCampos();
-                this.AtualizaDados();
+                LimparCampos();
+                AtualizaDados();
                 await DisplayAlert("Alerta", "Operação realizada com sucesso", "OK");
             }
             catch (Exception error)
@@ -60,8 +57,8 @@ namespace Cadastro_Usuario
                 {
                     await api.DeleteUser(id);
                     btSalvar.Text = "Cadastrar";
-                    this.AtualizaDados();
-                    this.LimparCampos();
+                    AtualizaDados();
+                    LimparCampos();
                 }
                 await DisplayAlert("Alerta", "Operação realizada com sucesso", "OK");
             }
@@ -82,7 +79,7 @@ namespace Cadastro_Usuario
         async void AtualizaDados()
         {
             var teste = await api.GetUsers();
-            listaUsuarios.ItemsSource = teste.OrderBy(item => item.firstName).ToList();
+            listaUsuarios.ItemsSource = teste.OrderBy(item => item.FirstName).ToList();
         }
 
         private async void Button_Clicked_1(object sender, EventArgs e)
@@ -93,9 +90,9 @@ namespace Cadastro_Usuario
                 usuario = await api.GetUser(id);
                 if (usuario.Id != null)
                 {
-                    entFirstname.Text = usuario.firstName;
-                    entSurname.Text = usuario.surName;
-                    entAge.Text = usuario.age.ToString();
+                    entFirstname.Text = usuario.FirstName;
+                    entSurname.Text = usuario.SurName;
+                    entAge.Text = usuario.Age.ToString();
                     btSalvar.Text = "Atualizar";
                 }
                 else btSalvar.Text = "Cadastrar";
@@ -107,17 +104,17 @@ namespace Cadastro_Usuario
             }
         }
 
-        private void listaUsuarios_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private void ListaUsuarios_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             usuario = e.SelectedItem as Usuarios;
 
             if (usuario.Id != null)
             {
-            entId.Text = usuario.Id.ToString();
-            entFirstname.Text = usuario.firstName;
-            entSurname.Text = usuario.surName;
-            entAge.Text = usuario.age.ToString();
-            btSalvar.Text = "Atualizar";
+                entId.Text = usuario.Id.ToString();
+                entFirstname.Text = usuario.FirstName;
+                entSurname.Text = usuario.SurName;
+                entAge.Text = usuario.Age.ToString();
+                btSalvar.Text = "Atualizar";
             }
             else
             {

@@ -10,11 +10,11 @@ namespace Cadastro_Usuario.Services
 {
     internal class UsuariosAPI
     {
-        const String URL = "http://192.168.15.6:5000/api/Usuario";
+        const string URL = "http://192.168.15.6:5000/api/Usuario";
 
         private HttpClient GetClient()
         {
-            HttpClient client = new HttpClient();
+            var client = new HttpClient();
 
             client.DefaultRequestHeaders.Add("Accept", "Application/json");
             client.DefaultRequestHeaders.Add("Connection", "close");
@@ -24,8 +24,7 @@ namespace Cadastro_Usuario.Services
         public async Task<List<Usuarios>> GetUsers()
         {
             HttpClient client = GetClient();
-            //HttpResponseMessage response = await client.GetAsync(dados);
-            var response = await client.GetAsync(URL);
+            HttpResponseMessage response = await client.GetAsync(URL);
             if (response.IsSuccessStatusCode) //codigo 200
             {
                 string content = await response.Content.ReadAsStringAsync();
@@ -36,11 +35,9 @@ namespace Cadastro_Usuario.Services
 
         public async Task<Usuarios> GetUser(Guid Id)
         {
-            String dados = URL + "/" + Id;
-            //Uri uri = new Uri(dados);
+            string dados = URL + "/" + Id;
             HttpClient client = GetClient();
             HttpResponseMessage response = await client.GetAsync(dados);
-            //var response = await client.GetAsync(dados);
             if (response.IsSuccessStatusCode) //codigo 200
             {
                 string content = await response.Content.ReadAsStringAsync();
@@ -52,7 +49,7 @@ namespace Cadastro_Usuario.Services
 
         public async Task CreateUser(Usuarios Usuario_Novo)
         {
-            String dados = URL;
+            string dados = URL;
             string json = JsonConvert.SerializeObject(Usuario_Novo);
             HttpClient client = GetClient();
             StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
@@ -61,7 +58,7 @@ namespace Cadastro_Usuario.Services
 
         public async Task UpDateUser(Usuarios Usuario_Atualizado)
         {
-            String dados = URL + "/" + Usuario_Atualizado.Id;
+            string dados = URL + "/" + Usuario_Atualizado.Id;
             string json = JsonConvert.SerializeObject(Usuario_Atualizado);
             HttpClient client = GetClient();
             StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
@@ -70,7 +67,7 @@ namespace Cadastro_Usuario.Services
 
         public async Task DeleteUser(Guid Id)
         {
-            String dados = URL + "/" + Id;
+            string dados = URL + "/" + Id;
             HttpClient client = GetClient();
             HttpResponseMessage response = await client.DeleteAsync(dados);
         }

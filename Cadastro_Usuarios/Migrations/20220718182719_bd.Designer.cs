@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Cadastro_Usuarios.Migrations
 {
     [DbContext(typeof(UsuariosContext))]
-    [Migration("20220704133402_bd")]
+    [Migration("20220718182719_bd")]
     partial class bd
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,17 +27,17 @@ namespace Cadastro_Usuarios.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("age")
+                    b.Property<int>("Age")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("creationDate")
+                    b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("firstName")
+                    b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("surName")
+                    b.Property<string>("SurName")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

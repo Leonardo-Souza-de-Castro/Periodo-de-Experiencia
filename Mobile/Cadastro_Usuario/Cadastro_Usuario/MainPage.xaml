@@ -17,17 +17,17 @@
             <Entry Placeholder="Primeiro Nome" x:Name="entFirstname"/>
             <Entry Placeholder="Sobrenome" x:Name="entSurname" />
             <Entry Placeholder="Idade" x:Name="entAge"  Keyboard="Numeric"/>
-            <Button Text="Cadastrar" x:Name="btSalvar" Clicked="btCadastrar_Clicked" FontSize="15" FontAttributes="Bold" TextTransform="None"/>
+            <Button Text="Cadastrar" x:Name="btSalvar" Clicked="Cadastrar_Clicked" FontSize="15" FontAttributes="Bold" TextTransform="None"/>
         </StackLayout>
         <StackLayout Orientation="Vertical" Padding="10,5,10,0">
-            <ListView x:Name="listaUsuarios" ItemSelected="listaUsuarios_ItemSelected" SeparatorVisibility="None">
+            <ListView x:Name="listaUsuarios" ItemSelected="ListaUsuarios_ItemSelected" SeparatorVisibility="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Padding="10,10" Orientation="Horizontal" >
-                                <Label Text="{Binding firstName}" HorizontalOptions="StartAndExpand" FontSize="16"/>
-                                <Label Text="{Binding surName}" HorizontalOptions="StartAndExpand" FontSize="16"/>
-                                <Label Text="{Binding age}" HorizontalOptions="End" FontSize="16"/>
+                                <Label Text="{Binding FirstName}" HorizontalOptions="StartAndExpand" FontSize="16"/>
+                                <Label Text="{Binding SurName}" HorizontalOptions="StartAndExpand" FontSize="16"/>
+                                <Label Text="{Binding Age}" HorizontalOptions="End" FontSize="16"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

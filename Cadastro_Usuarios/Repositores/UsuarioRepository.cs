@@ -31,10 +31,10 @@ namespace Cadastro_Usuarios.Repositores
             Usuarios usuario = new Usuarios();
 
             usuario.Id = new Guid();
-            usuario.creationDate = DateTime.Now;
-            usuario.firstName = Usuario_Novo.FirstName;
-            usuario.surName = Usuario_Novo.SurName;
-            usuario.age = Usuario_Novo.Age;
+            usuario.CreationDate = DateTime.Now;
+            usuario.FirstName = Usuario_Novo.FirstName;
+            usuario.SurName = Usuario_Novo.SurName;
+            usuario.Age = Usuario_Novo.Age;
             ctx.Usuarios.Add(usuario);
             ctx.SaveChanges();
         }
@@ -69,15 +69,15 @@ namespace Cadastro_Usuarios.Repositores
 
             if (Usuario_atualizado.SurName != null)
             {
-                usuarios.surName = Usuario_atualizado.SurName;
+                usuarios.SurName = Usuario_atualizado.SurName;
             }
             if (Usuario_atualizado.FirstName != null)
             {
-                usuarios.firstName = Usuario_atualizado.FirstName;
+                usuarios.FirstName = Usuario_atualizado.FirstName;
             }
             if (Usuario_atualizado.Age > 0)
             {
-                usuarios.age = Usuario_atualizado.Age;
+                usuarios.Age = Usuario_atualizado.Age;
             }
 
             ctx.Usuarios.Update(usuarios);

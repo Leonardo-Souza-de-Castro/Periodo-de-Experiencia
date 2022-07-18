@@ -20,17 +20,17 @@ namespace Cadastro_usuarios.Test
 
             var user1 = new Usuarios();
             user1.Id = new Guid();
-            user1.creationDate = DateTime.Now;
-            user1.firstName = "Leonardo";
-            user1.surName = "";
-            user1.age = 17;
+            user1.CreationDate = DateTime.Now;
+            user1.FirstName = "Leonardo";
+            user1.SurName = "";
+            user1.Age = 17;
 
             var user2 = new Usuarios();
             user1.Id = new Guid();
-            user1.creationDate = DateTime.Now;
-            user1.firstName = "Leonardo";
-            user1.surName = "Souza";
-            user1.age = 17;
+            user1.CreationDate = DateTime.Now;
+            user1.FirstName = "Leonardo";
+            user1.SurName = "Souza";
+            user1.Age = 17;
 
             lista_usuarios.Add(user1);
             lista_usuarios.Add(user2);
