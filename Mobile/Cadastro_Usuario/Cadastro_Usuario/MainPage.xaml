@@ -4,30 +4,30 @@
              xmlns:local="clr-namespace:Cadastro_Usuario"
              x:Class="Cadastro_Usuario.MainPage">
 
-    <StackLayout Padding="20">
+    <StackLayout Padding="15">
         <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
             <Label Text="Aplicação Usuarios" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
         <StackLayout Orientation="Horizontal" >
-            <Entry Placeholder="ID" x:Name="entId" />
-            <Button Text="Localizar" Clicked="Button_Clicked_1"/>
-            <Button Text="Excluir" Clicked="Button_Clicked" />
+            <Entry Placeholder="ID" x:Name="entId" WidthRequest="177"/>
+            <Button Text="Localizar" Clicked="Button_Clicked_1" FontSize="15" FontAttributes="Bold" TextTransform="None"/>
+            <Button Text="Excluir" Clicked="Button_Clicked" FontSize="15" FontAttributes="Bold" TextTransform="None"/>
         </StackLayout>
         <StackLayout x:Name="stlDados">
             <Entry Placeholder="Primeiro Nome" x:Name="entFirstname"/>
             <Entry Placeholder="Sobrenome" x:Name="entSurname" />
             <Entry Placeholder="Idade" x:Name="entAge"  Keyboard="Numeric"/>
-            <Button Text="Cadastrar" x:Name="btSalvar" Clicked="btCadastrar_Clicked" />
+            <Button Text="Cadastrar" x:Name="btSalvar" Clicked="btCadastrar_Clicked" FontSize="15" FontAttributes="Bold" TextTransform="None"/>
         </StackLayout>
         <StackLayout Orientation="Vertical" Padding="10,5,10,0">
-            <ListView x:Name="listaUsuarios">
+            <ListView x:Name="listaUsuarios" ItemSelected="listaUsuarios_ItemSelected" SeparatorVisibility="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Padding="10,10" Orientation="Horizontal">
-                                <Label Text="{Binding firstName}" HorizontalOptions="StartAndExpand" />
-                                <Label Text="{Binding surName}" HorizontalOptions="StartAndExpand"/>
-                                <Label Text="{Binding age}" HorizontalOptions="End"/>
+                            <StackLayout Padding="10,10" Orientation="Horizontal" >
+                                <Label Text="{Binding firstName}" HorizontalOptions="StartAndExpand" FontSize="16"/>
+                                <Label Text="{Binding surName}" HorizontalOptions="StartAndExpand" FontSize="16"/>
+                                <Label Text="{Binding age}" HorizontalOptions="End" FontSize="16"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

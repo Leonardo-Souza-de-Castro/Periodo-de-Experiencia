@@ -35,6 +35,7 @@ namespace Cadastro_Usuario
                 {
                     usuario.Id = Guid.Parse(entId.Text);
                     await api.UpDateUser(usuario);
+                    btSalvar.Text = "Cadastrar";
                 }
                 else
                 {
@@ -58,6 +59,9 @@ namespace Cadastro_Usuario
                 if (id != null)
                 {
                     await api.DeleteUser(id);
+                    btSalvar.Text = "Cadastrar";
+                    this.AtualizaDados();
+                    this.LimparCampos();
                 }
                 await DisplayAlert("Alerta", "Operação realizada com sucesso", "OK");
             }
@@ -100,6 +104,24 @@ namespace Cadastro_Usuario
             {
                 await DisplayAlert("Erro", error.Message, "OK");
 
+            }
+        }
+
+        private void listaUsuarios_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            usuario = e.SelectedItem as Usuarios;
+
+            if (usuario.Id != null)
+            {
+            entId.Text = usuario.Id.ToString();
+            entFirstname.Text = usuario.firstName;
+            entSurname.Text = usuario.surName;
+            entAge.Text = usuario.age.ToString();
+            btSalvar.Text = "Atualizar";
+            }
+            else
+            {
+                btSalvar.Text = "Cadastrar";
             }
         }
     }
