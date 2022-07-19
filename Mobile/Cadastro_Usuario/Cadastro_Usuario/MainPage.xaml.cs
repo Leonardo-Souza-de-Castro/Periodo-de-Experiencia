@@ -86,16 +86,22 @@ namespace Cadastro_Usuario
         {
             try
             {
-                var id = Guid.Parse(entId.Text);
-                usuario = await api.GetUser(id);
-                if (usuario.Id != null)
+                //var id = Guid.Parse(entId.Text);
+                //usuario = await api.GetUser(id);
+                //if (usuario.Id != null)
+                //{
+                //    entFirstname.Text = usuario.FirstName;
+                //    entSurname.Text = usuario.SurName;
+                //    entAge.Text = usuario.Age.ToString();
+                //    btSalvar.Text = "Atualizar";
+                //}
+                //else btSalvar.Text = "Cadastrar";
+                if (entId.Text != null)
                 {
-                    entFirstname.Text = usuario.FirstName;
-                    entSurname.Text = usuario.SurName;
-                    entAge.Text = usuario.Age.ToString();
-                    btSalvar.Text = "Atualizar";
+                    LimparCampos();
+                    btSalvar.Text = "Cadastrar";
+                    
                 }
-                else btSalvar.Text = "Cadastrar";
             }
             catch (Exception error)
             {
@@ -119,6 +125,7 @@ namespace Cadastro_Usuario
             else
             {
                 btSalvar.Text = "Cadastrar";
+                LimparCampos();
             }
         }
     }
